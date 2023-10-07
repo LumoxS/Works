@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreenRock</title>
+  <link rel="stylesheet" href="libs/Bootstrap/my_bootstrap.css">
+  <link rel="stylesheet" href="libs/Animate/animate.min.css">
+  <link rel="stylesheet" href="libs/hover-min.css">
+  <link rel="stylesheet" href="libs/Swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/hcontacts.css">
+  <link rel="stylesheet" href="css/burger.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/services.css">
+  <link rel="stylesheet" href="css/room.css">
+  <link rel="stylesheet" href="css/media.css">
+  <link rel="icon" href="img/ico.svg" type="image/x-icon">
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=c05d3661-c896-467f-8f14-79f9e01a2291&lang=ru_RU"
+    type="text/javascript">
+    </script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <div class="header__translation flex">
+        <button class="btn header__translation-ru btn-translation hvr-grow">
+        </button>
+        <button class="btn header__translation-en btn-translation hvr-grow">
+        </button>
+        <button class="btn header__translation-ge btn-translation hvr-grow">
+        </button>
+        <button class="btn header__translation-tr btn-translation hvr-grow">
+        </button>
+      </div>
+      <div class="header__contact container flex">
+        <a href="#yandex" class="header__contact-adress hvr-grow">Батуми, ш. Андрея Первозванного, 103</a>
+        <a href="tel:+995-999-99-99-99" class="header__contact-telephone hvr-grow">+995-999-99-99-99</a>
+        <a href="#" class="header__contact-mess hvr-grow flex"><img src="img/mess.png" height="35" alt=""></a>
+        <a href="mailto:greenhotel@hotel12345.com" class="header__contact-email hvr-grow">greenhotel@hotel12345.com</a>
+        <a href="#" class="header__contact-instagram hvr-grow"><img src="img/instagram.png" height="35" alt=""></a>
+        <a class="header__contact-booking flex hvr-grow" href="https://www.booking.com/hotel/ge/green-rock.ru.html" target="_blank">Booking</a>
+      </div>
+      <nav class="navbar navbar-expand-xl navbar-expand-lg navbar-expand-md  navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand hvr-wobble-horizontal animate__animated animate__swing rotateIn btn" href="#"></a>
+
+          <button class="navbar-toggler navbar__burger" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Переключатель навигации">
+            <!-- <span class="navbar-toggler-icon"></span> -->
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav animate__animated animate__bounceInLeft rotateIn animate__delay-0.5s">
+              <li class="nav-item">
+                <a class="nav-link hvr-wobble-horizontal btn" href="#" type="button">Отель</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link hvr-wobble-horizontal btn" href="#" type="button">Номера</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link hvr-wobble-horizontal btn" href="#" type="button">Услуги</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link hvr-wobble-horizontal btn" href="#" type="button">Ресторан</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link hvr-wobble-horizontal btn" href="#" type="button">Контакты</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    </header>
+
+    <main class="main">
+      <section class="hero">
+        <div class="hero__container container flex">
+          <video class="hero__video" src="img/hero/hero.mp4" autoplay="autoplay" muted="muted" loop="loop"
+            playsinline=""></video>
+          <form class="hero__form">
+            <h3 class="hero__form-caption row">БРОНИРОВАНИЕ</h3>
+            <div class="hero__checkinout row">
+              <div class="hero__checkin col">
+                <span class="hero__checkinout-caption row">Заезд</span>
+                <label for="checkin" id="checkin-lbl" class="hvr-grow">
+                  <span id="checkin-day" class="hero__checkinout-day">08</span>
+                  <span id="checkin-month" class="hero__checkinout-month">Август</span>
+                  <span id="checkin-year" class="hero__checkinout-year">2023</span>
+                </label>
+                <input type="text" id="checkin" class="hero__checkin-control picker-in hasDatepicker" value=""
+                  readonly="">
+              </div>
+              <div class="hero__checkout col">
+                <span class="hero__checkinout-caption row">Выезд</span>
+                <label for="checkin" id="checkout-lbl" class="hvr-grow">
+                  <span id="checkout-day" class="hero__checkinout-day">15</span>
+                  <span id="checkout-month" class="hero__checkinout-month">Сентябрь</span>
+                  <span id="checkout-year" class="hero__checkinout-year">2023</span>
+                </label>
+                <input type="text" id="checkout" class="hero__checkout-control picker-in hasDatepicker" value=""
+                  readonly="">
+              </div>
+              <div class="hero__checkin-guests hvr-grow">
+                <input type="text" class="hero__checkin-guests-input" unselectable="on" readonly=""
+                  value="2 взрослых, 0 детей">
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="about">
+        <div class="about__container container flex">
+          Отель с уникальным панорамным видом.
+          <br>
+          Современные номера. Лучший ресторан.
+          <br>
+          Гарантия лучшей цены
+        </div>
+      </section>
+
+      <section class="services">
+        <div class="services__container container">
+          <h3 class="services__caption">
+            Услуги
+          </h3>
+          <div class="services__blocks row">
+            <div class="services__block services__block-01 col-sm-4">
+              <a href="#" class="services__block-img">
+                <img alt="" class="img-fluid" src="./img/Services/room.jpg">
+              </a>
+              <a href="#" class="services__block-text">
+                <span>Номера</span>
+                <i class="services__block-circle">&#62;</i>
+              </a>
+            </div>
+            <div class="services__block services__block-02 col-sm-4">
+              <a href="#" class="services__block-img">
+                <img alt="" class="img-fluid" src="./img/Services/restoran.jpg">
+              </a>
+              <a href="#" class="services__block-text">
+                <span>Ресторан</span>
+                <i class="services__block-circle">&#62;</i>
+              </a>
+            </div>
+            <div class="services__block services__block-03 col-sm-4">
+              <a href="#" class="services__block-img">
+                <img alt="" class="img-fluid" src="./img/Services/parking.jpg">
+              </a>
+              <a href="#" class="services__block-text">
+                <span>Парковка</span>
+                <i class="services__block-circle">&#62;</i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="room">
+        <div class="room__container container">
+          <div class="swiper">
+            <h3 class="room__caption services__caption">
+              Номера
+            </h3>
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img class="room__swiper-img" src="img/Hotel/hotel-11.jpg" alt="Номера"></div>
+              <div class="swiper-slide"><img class="room__swiper-img" src="img/Hotel/hotel-21.jpg" alt="Номера"></div>
+              <div class="swiper-slide"><img class="room__swiper-img" src="img/Hotel/hotel-31.jpg" alt="Номера"></div>
+              <div class="swiper-slide"><img class="room__swiper-img" src="img/Hotel/hotel-41.jpg" alt="Номера"></div>
+              <div class="swiper-slide"><img class="room__swiper-img" src="img/Hotel/hotel-51.jpg" alt="Номера"></div>
+              <div class="swiper-slide"><img class="room__swiper-img" src="img/Hotel/hotel-61.jpg" alt="Номера"></div>
+              <div class="swiper-slide"><img class="room__swiper-img" src="img/Hotel/hotel-71.jpg" alt="Номера"></div>
+              <div class="swiper-slide"><img class="room__swiper-img" src="img/Hotel/hotel-01.jpg" alt="Номера"></div>
+              <div class="swiper-slide"><img class="room__swiper-img" src="img/Hotel/hotel-02.jpg" alt="Номера"></div>
+              <div class="swiper-slide"><img class="room__swiper-img" src="img/Hotel/hotel-03.jpg" alt="Номера"></div>
+              <div class="swiper-slide"><img class="room__swiper-img" src="img/Hotel/hotel-04.jpg" alt="Номера"></div>
+              <div class="swiper-slide"><img class="room__swiper-img" src="img/Hotel/hotel-05.jpg" alt="Номера"></div>
+              <div class="swiper-slide"><img class="room__swiper-img" src="img/Hotel/hotel-06.jpg" alt="Номера"></div>
+              <div class="swiper-slide"><img class="room__swiper-img" src="img/Hotel/hotel-07.jpg" alt="Номера"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-scrollbar"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="yandex container" id="yandex">
+        <h3 class="yandex__caption services__caption">
+          Мы&nbsp;на&nbsp;карте
+        </h3>
+        <div class="yandex__map" id="MyMap"></div>
+      </section>
+    </main>
+
+
+
+    <footer class="footer">
+      <div class="footer__container container">
+
+      </div>
+    </footer>
+
+  </div>
+  <script src="libs/Bootstrap/js/bootstrap.min.js"></script>
+  <script src="libs/Swiper/swiper-bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+.community {
+  min-height: 1100px;
+  margin-bottom: 30px;
+}
+
+.community__container {
+  padding-top: 10px;
+}
+
+.community__block1 {
+  position: relative;
+  width: 100%;
+}
+
+
+.block-txt {
+  width: 419px;
+  min-height: 436px;
+  margin-right: 115px;
+}
+
+.block-txt h3 {
+  margin-bottom: 35px;
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 100%;
+  letter-spacing: -0.96px;
+  color: #21201F;
+}
+
+.block-txt p {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 120%;
+  color: #21201F;
+}
+
+.block-img {
+  width: 419px;
+  height: 447px;
+  overflow: hidden;
+}
+
+.community__block1 {
+  margin-bottom: 120px;
+}
+
+.community__block1-img {
+ cursor: pointer;
+  position: relative;
+}
+
+.community__block1-img::after {
+  content: '';
+  position: absolute;
+  top: 70px;
+  left: -50px;
+  width: 264px;
+  height: 264px;
+  background-image: url('../img/plus.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.community__block1-img img {
+  -o-object-fit: none;
+     object-fit: none;
+}
+
+.community__block2-img {
+  position: relative;
+  overflow: visible;
+  margin-right: 184px;
+  width: 293px;
+  height: 436px;
+  padding-bottom: 31px;
+}
+
+.community__block2-img-seal {
+  position: absolute;
+  width: 464px;
+  height: 464px;
+  left: -84px;
+  top: -23px;
+  -webkit-animation-name: rotation;
+          animation-name: rotation;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-transition: widh 0.3s ease-in-out, height 0.3s ease-in-out;
+  -o-transition: widh 0.3s ease-in-out, height 0.3s ease-in-out;
+  transition: widh 0.3s ease-in-out, height 0.3s ease-in-out;
+}
+
+.community__block2-txt p {
+ margin-bottom: 48px;
+}

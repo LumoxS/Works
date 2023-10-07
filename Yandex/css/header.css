@@ -1,0 +1,230 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+.header {
+  position: relative;
+  width: 100%;
+  min-height: 804px;
+  -webkit-transition: min-height 0.3s ease-in-out;
+  -o-transition: min-height 0.3s ease-in-out;
+  transition: min-height 0.3s ease-in-out;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.22;
+  background: var(--Linear, linear-gradient(0deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.20) 100%), linear-gradient(90deg, #FF5C4D 0%, #EB469F 25%, #8341EF 72%, #3F68F9 100%));
+}
+
+
+.header__container {
+  position: relative;
+  width: 100%;
+  padding-top: 125px;
+  -webkit-transition: padding 0.3s ease-in-out;
+  -o-transition: padding 0.3s ease-in-out;
+  transition: padding 0.3s ease-in-out;
+}
+
+.header__descr {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 430px;
+  position: relative;
+  z-index: 10;
+}
+
+.header__descr-logo {
+  cursor: pointer;
+  width: 176px;
+  height: 50.1px;
+  margin-bottom: 65px;
+  -webkit-transition: margin-bottom 0.3s ease-in-out;
+  -o-transition: margin-bottom 0.3s ease-in-out;
+  transition: margin-bottom 0.3s ease-in-out;
+}
+
+.header__descr-caption {
+  width: 100%;
+  min-height: 196px;
+  margin-bottom: 28px;
+  font-size: 72px;
+  font-weight: 900;
+  line-height: 100%;
+  font-style: normal;
+  letter-spacing: -1.44px;
+  color: #21201F;
+  -webkit-transition: font-size 0.3s ease-in-out, min-height 0.3s ease-in-out;
+  -o-transition: font-size 0.3s ease-in-out, min-height 0.3s ease-in-out;
+  transition: font-size 0.3s ease-in-out, min-height 0.3s ease-in-out;
+}
+
+.header__descr-block {
+  width: 100%;
+  min-height: 80px;
+  margin-bottom: 35px;
+}
+
+.header__descr-txt,
+.header__descr-price {
+  width: 100%;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 130%;
+  -webkit-transition: font-size 0.3s ease-in-out;
+  -o-transition: font-size 0.3s ease-in-out;
+  transition: font-size 0.3s ease-in-out;
+}
+
+.price__now {
+  position: relative;
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 120%;
+  margin-left: 10px;
+  margin-right: 17px;
+  color: #21201F;
+  -webkit-transition: font-size 0.3s ease-in-out;
+  -o-transition: font-size 0.3s ease-in-out;
+  transition: font-size 0.3s ease-in-out;
+}
+
+.price__now::before {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  top: -4px;
+  left: -11px;
+  width: calc(100% + 24px);
+  height: calc(100% + 6px);
+  border-radius: 500px;
+  background: -o-radial-gradient(100% 0%, 141.42% 141.42%, #E0B8FF 0%, #B6B9FF 100%);
+  background: radial-gradient(141.42% 141.42% at 100% 0%, #E0B8FF 0%, #B6B9FF 100%);
+}
+
+
+.price__before {
+  position: relative;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 120%;
+  vertical-align: middle;
+  color: #808080;
+  -webkit-transition: font-size 0.3s ease-in-out;
+  -o-transition: font-size 0.3s ease-in-out;
+  transition: font-size 0.3s ease-in-out;
+}
+
+.price__before::before {
+  position: absolute;
+  z-index: -2;
+  content: '';
+  top: -11px;
+  left: -55px;
+  width: calc(100% + 65px);
+  height: calc(100% + 20px);
+  border-radius: 500px;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, 0.63)), to(rgba(255, 255, 255, 0.63))), radial-gradient(141.42% 141.42% at 100% 0%, #E0B8FF 0%, #B6B9FF 100%);
+  background: -o-linear-gradient(bottom, rgba(255, 255, 255, 0.63) 0%, rgba(255, 255, 255, 0.63) 100%), -o-radial-gradient(100% 0%, 141.42% 141.42%, #E0B8FF 0%, #B6B9FF 100%);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.63) 0%, rgba(255, 255, 255, 0.63) 100%), radial-gradient(141.42% 141.42% at 100% 0%, #E0B8FF 0%, #B6B9FF 100%);
+}
+
+.price__before::after {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 0;
+  width: 37px;
+  height: 2px;
+  background-color: #808080;
+}
+
+.header__login, .community__login {
+  padding: 24px 48px;
+  border-radius: 36px;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 22px;
+  background-color: #FFDE40;
+  -webkit-box-shadow: 0px 4px 98px 0px rgba(255, 222, 64, 0.59);
+          box-shadow: 0px 4px 98px 0px rgba(255, 222, 64, 0.59);
+  -webkit-transition: padding 0.3s ease-in-out, height 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  -o-transition: padding 0.3s ease-in-out, height 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  transition: padding 0.3s ease-in-out, height 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.header__login:hover, .community__login:hover {
+  background-color: rgb(44, 126, 181) ;
+  color: white;
+}
+
+.header__login:focus, .community__login:hover {
+  border: 1px solid black;
+}
+
+.header__img {
+  position: absolute;
+  top: 45px;
+  right: 77px;
+  width: 818px;
+  height: 714px;
+}
+
+.header__scooter {
+  width: 100%;
+  height: 100%;
+}
+
+.header__seal {
+  position: absolute;
+  width: 25%;
+  height: 29%;
+  right: 47%;
+  bottom: 22%;
+  -webkit-animation-name: rotation;
+          animation-name: rotation;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+@-webkit-keyframes rotation {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotation {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+

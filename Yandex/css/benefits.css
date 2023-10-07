@@ -1,0 +1,84 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+
+.benefits__container {
+  padding-right: 314px;
+  margin-bottom: 20px;
+}
+
+.benefits__caption {
+  width: 827px;
+  margin-bottom: 38px;
+  font-size: 56px;
+  font-weight: 900;
+  line-height: 100%;
+  letter-spacing: -1.12px;
+  color: #21201F;
+}
+
+.benefits__items {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.benefits__item {
+  cursor: pointer;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start ;
+  width: 400px;
+  border: 2px solid transparent;
+  min-height: 128px;
+  margin-bottom: 61px;
+
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+}
+
+.benefits__item:not(:nth-child(2n)){
+  margin-right: 10px;
+}
+
+/* .benefits__item:nth-last-child(-n+2) {
+  margin-bottom: 0;
+} */
+
+.benefits__item-picture {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+   width: 83px;
+  height: 83px;
+}
+
+.benefits__item-txt {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 120%;
+  color: #21201F;
+  -webkit-transition: color 0.3s ease-in-out, font-size 0.4s ease-in-out;
+  -o-transition: color 0.3s ease-in-out, font-size 0.4s ease-in-out;
+  transition: color 0.3s ease-in-out, font-size 0.4s ease-in-out;
+}
+
+.benefits__item:hover .benefits__item-txt{
+  color: #FFDE40;;
+}
+
+.benefits__item:focus {
+ -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+ outline: none;
+}

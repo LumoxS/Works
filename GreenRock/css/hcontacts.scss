@@ -1,0 +1,53 @@
+.header__contact {
+  min-height: 100px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-bottom: 2px solid #a78b4c;
+  a:not(:last-child) {
+  }
+  a{
+    display: flex;
+    flex-basis: calc(100% / 3 - 20px);
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    padding: 0 10px;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.568627451);
+    border-radius: 10px;
+    text-align: center;
+    img {
+      width: auto;
+    }
+  }
+}
+
+.header__contact-adress {
+  font-size: 14px;
+  color: #a78b4c;
+}
+
+a[href^="tel:"]:before {
+  content: "\260e";
+  margin-right: 0.5em;
+}
+
+a[href^="mailto:"]:before {
+  content: '';
+  display: inline-block;
+  margin-right: 0.5em;
+  width: 16px;
+  height: 16px;
+  background-image:url('../img/email.png');
+  background-size: cover;
+}
+
+.header__contact-booking {
+  height: 35px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 10px;
+  background-color: #003580;
+}
+

@@ -1,0 +1,298 @@
+@font-face {
+  font-family: "Lato";
+  src: local("Lato Regular"), local("LatoRegular"), url("../fonts/Lato-Hairline.woff2") format("woff2"), url("../fonts/Lato-Hairline.woff") format("woff");
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Muller";
+  src: local("Muller Regular"), local("MullerRegular"), url("../fonts/MullerRegular.woff2") format("woff2"), url("../fonts/MullerRegular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Muller";
+  src: local("Muller Medium"), local("MullerMedium"), url("../fonts/MullerMedium.woff2") format("woff2"), url("../fonts/MullerMedium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Muller Regular";
+  src: local("Muller Regular Italic"), local("MullerRegularItalic"), url("../fonts/MullerRegularItalic.woff2") format("woff2"), url("../fonts/MullerRegularItalic.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Muller";
+  src: local("Muller Bold"), local("MullerBold"), url("../fonts/MullerBold.woff2") format("woff2"), url("../fonts/MullerBold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Muller";
+  src: local("Muller Light Italic"), local("MullerLightItalic"), url("../fonts/MullerLightItalic.woff2") format("woff2"), url("../fonts/MullerLightItalic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: "OpenSans";
+  src: local("Open Sans Regular"), local("OpenSans-Regular"), url("../fonts/OpenSans-Regular.woff2") format("woff2"), url("../fonts/OpenSans-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+:root {
+  --color-black-121723: #121723;
+  --color-black-292E39: #292E39;
+  --color-gray-A1A6B4: #A1A6B4;
+  --color-gray-D2D5DD: #D2D5DD;
+  --color-gray-E6E8EC: #E6E8EC;
+  --color-gray-F5F6F7: #F5F6F7;
+  --color-white-FFFFFF: #FFFFFF;
+  --color-yellow-BB973E: #BB973E;
+  --color-yellow-F0D288: #F0D288;
+  --color-blue-0039A6: #0039A6;
+  --color-blue-4F28A5: #4F28A5;
+  --color-blue-6D31EE: #6D31EE;
+  --color-blue-AA9DFA: #AA9DFA;
+  --color-red-D52B1E: #D52B1E;
+}
+
+/* GLOBAL */
+html {
+  box-sizing: border-box;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  font-family: "Muller", sans-serif;
+  font-weight: 400;
+  color: var(--color-black-121723);
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  padding: 0;
+  outline: none;
+  border: none;
+}
+
+p,
+h1,
+h2 {
+  padding: 0;
+  margin: 0;
+}
+
+h2 {
+  font-size: 48px;
+  line-height: 100%;
+  font-weight: 400;
+  color: var(--color-black-121723);
+}
+
+img,
+svg {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  padding: 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+fieldset {
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+
+fieldset legend {
+  opacity: 0;
+  font-size: 0;
+  height: 0;
+  width: 0;
+}
+
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-big {
+  padding: 23px 52px;
+  font-size: 20px;
+  line-height: 100%;
+  color: var(--color-white-FFFFFF);
+  background-color: var(--color-blue-6D31EE);
+  border-radius: 40px;
+  border: 2px solid var(--color-blue-6D31EE);
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.btn-big:hover {
+  background-color: var(--color-blue-AA9DFA);
+  border-color: var(--color-blue-AA9DFA);
+}
+
+.btn-big:active {
+  background-color: var(--color-blue-4F28A5);
+  border-color: var(--color-blue-4F28A5);
+}
+
+.btn-big:focus:not(:active):not(:hover) {
+  background-color: var(--color-blue-AA9DFA);
+  border-color: var(--color-blue-4F28A5);
+}
+
+.pulse {
+  background-color: var(--color-blue-4F28A5);
+  border-radius: 50%;
+  animation: pulse 0.7s ease-in-out;
+  transform: scale(0);
+  position: absolute;
+}
+
+@keyframes pulse {
+  to {
+    transform: scale(2);
+    background-color: var(--color-blue-4F28A5);
+    opacity: 0;
+  }
+}
+.flex {
+  display: flex;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.container-fluid {
+  max-width: 1440px;
+  padding: 0 120px;
+  margin: 0 auto;
+  /* outline: 1px solid red; */
+}
+
+.header__translation {
+  width: 100%;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../img/flags/flag-bg.jpg");
+}
+
+.btn-translation {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+}
+
+.btn-translation:not(:last-child) {
+  margin-right: 40px;
+}
+
+.btn-translation {
+  background-size: cover;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.568627451);
+}
+
+.header__translation-ru {
+  background-image: url("../img/flags/ru.png");
+}
+
+.header__translation-en {
+  background-image: url("../img/flags/en.png");
+}
+
+.header__translation-ge {
+  background-image: url("../img/flags/georgia.png");
+}
+
+.header__translation-tr {
+  background-image: url("../img/flags/Flag_of_Turkey.png");
+}
+
+.navbar {
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-brand {
+  width: 140px;
+  height: 40px;
+  flex-shrink: 0;
+  background-position: center;
+  background-image: url("../img/Logo_Green.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 5px;
+  border: 1px solid #dfe0e4;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.568627451);
+}
+
+.navbar-collapse {
+  justify-content: end;
+}
+
+.nav-item {
+  width: 100px;
+}
+
+.nav-link {
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.568627451);
+}
+
+.nav-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.about__container {
+  font-family: "Lato";
+  width: 100%;
+  min-height: 200px;
+  font-size: 2em;
+  line-height: 50px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: black;
+  text-shadow: #FC0 1px 0 10px;
+}
+
+.yandex {
+  margin-bottom: 80px;
+}
+
+.yandex__map {
+  width: 100%;
+  min-width: 290px;
+  height: 600px;
+  margin: 0 auto;
+}/*# sourceMappingURL=style.css.map */

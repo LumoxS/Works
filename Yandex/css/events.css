@@ -1,0 +1,164 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+.events {
+  min-height: 1500px;
+}
+
+.events__container {
+  padding-top: 65px;
+  padding-right: 230px;
+}
+
+.events__container-caption {
+  width: 827px;
+  margin-bottom: 36px;
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 100%;
+  letter-spacing: -0.96px;
+  color: #21201f;
+}
+
+.events__descr .header__login{
+display: none;
+}
+
+.events__descr-txt {
+  width: 425px;
+  min-height: 191px;
+  margin-bottom: 66px;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 120%;
+  color: #21201f;
+}
+
+.events__card {
+  cursor: pointer;
+  position: relative;
+  width: 455px;
+  height: 455px;
+  border-radius: 64px;
+  -webkit-transform: rotate(2deg);
+      -ms-transform: rotate(2deg);
+          transform: rotate(2deg);
+  -o-object-fit: cover;
+     object-fit: cover;
+  overflow: visible;
+  -webkit-transition: widh 0.3s ease-in-out, height 0.3s ease-in-out, -webkit-filter 0.4s ease-in-out;
+  transition: widh 0.3s ease-in-out, height 0.3s ease-in-out, -webkit-filter 0.4s ease-in-out;
+  -o-transition: widh 0.3s ease-in-out, height 0.3s ease-in-out, filter 0.4s ease-in-out;
+  transition: widh 0.3s ease-in-out, height 0.3s ease-in-out, filter 0.4s ease-in-out;
+  transition: widh 0.3s ease-in-out, height 0.3s ease-in-out, filter 0.4s ease-in-out, -webkit-filter 0.4s ease-in-out;
+}
+
+.events__card:hover {
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+}
+
+.events__card .btn {}
+
+.card-01,
+.card-03 {
+  margin-bottom: 22px;
+}
+
+.events__card-part1 {
+  margin-right: 13px;
+}
+
+.card-01::after, .card-03::after, .card-04::after {
+  content: '';
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-transition: widh 0.3s ease-in-out, height 0.3s ease-in-out, top 0.3s ease-in-out, right 0.3s ease-in-out, bottom 0.3s ease-in-out, left 0.3s ease-in-out;
+  -o-transition: widh 0.3s ease-in-out, height 0.3s ease-in-out, top 0.3s ease-in-out, right 0.3s ease-in-out, bottom 0.3s ease-in-out, left 0.3s ease-in-out;
+  transition: widh 0.3s ease-in-out, height 0.3s ease-in-out, top 0.3s ease-in-out, right 0.3s ease-in-out, bottom 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.card-01::after {
+  top: 0;
+  left: -160px;
+  background-image: url('../img/mark1.png');
+}
+
+.card-03::after {
+  top: -140px;
+  right: -145px;
+  background-image: url('../img/mark2.png');
+}
+
+.card-04::after {
+  bottom: -185px;
+  right: -120px;
+  background-image: url('../img/mark3.png');
+}
+
+
+.events__card-part2 {
+  margin-top: -208px;
+}
+
+.events__card img {
+  -webkit-transform: rotate(-2deg);
+      -ms-transform: rotate(-2deg);
+          transform: rotate(-2deg);
+}
+
+.noswiper {
+  position: relative;
+}
+
+.swiper,
+.swiper-button-prev,
+.swiper-button-next {
+  display: none;
+}
+
+.swiper {
+  margin-bottom: 24px;
+}
+
+.swiper-navigation {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 48px;
+}
+
+
+.swiper-button-prev, .swiper-button-next {
+  margin-top: 0;
+  right: auto;
+  left: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: black;
+  width: 60px;
+  height: 60px;
+  font-size: 36px;
+  font-weight: 900;
+  border-radius: 100%;
+  background-color:#FFDE40;
+}
+
+.swiper-button-prev {
+  margin-right: 22px;
+}
+
+.swiper-button-prev::after, .swiper-button-next::after {
+  display: none;
+}
