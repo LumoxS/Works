@@ -31,3 +31,14 @@
         right: 30px;
     }
 }
+
+@media (max-width: 460px) {
+    .condition__input label {
+        font-size: 16px;
+    }
+
+    .condition__input {
+        margin-bottom: 40px;
+    }
+    
+}

@@ -1,5 +1,4 @@
 (() => {
-
     function shuffle(arr) {
         const arrcount = arr.length;
         for (let i = 0; i <= arrcount - 1; ++i) {
@@ -24,7 +23,7 @@
         };
     }
 
-    function creatArrayBackGroundCard(arrayImg) {
+    function creatArrayBackGroundCard(arrayImg) { 
         for (let i = 1; i <= 20; ++i) {
             arrayImg.push({
                 src: "url('./img/cards/" + String(i) + ".jpg')"
@@ -37,13 +36,13 @@
         const array = [];
         const arrayImg = []
         const keySave = 'memo';
-        let card1 = {};
-        let card2 = {};
+        let card1 = {}; 
+        let card2 = {}; 
         let countLessCard = 0;
-        let timerIdClick = null;
-        let timerIdClickFinish = null;
-        let timerIDGame = null;
-        let timerIDGameFinish = null;
+        let timerIdClick = null; 
+        let timerIdClickFinish = null; 
+        let timerIDGame = null; 
+        let timerIDGameFinish = null; 
         let timeWork = 0;
         let timeAll = 0;
         restoreGame();
@@ -62,19 +61,19 @@
         }
 
         function cardsUnBlock() {
-            document.querySelectorAll('.card').forEach(function (element) {
+            document.querySelectorAll('.card').forEach(function (element) { 
                 element.classList.remove('card-block', 'card-open');
             })
         }
 
         function createCardsCheck(id, item) {
-            if ((Object.entries(card1).length === 0) && (Object.entries(card2).length === 0)) {
+            if ((Object.entries(card1).length === 0) && (Object.entries(card2).length === 0)) { 
                 card1 = {
                     id: id,
                     item: item,
                 }
             }
-            else if ((Object.entries(card1).length > 0) && (Object.entries(card2).length === 0)) {
+            else if ((Object.entries(card1).length > 0) && (Object.entries(card2).length === 0)) { 
                 card2 = {
                     id: id,
                     item: item,
@@ -83,15 +82,15 @@
         }
 
         function cardsBlock() {
-            document.querySelectorAll('.card').forEach(function (element) {
+            document.querySelectorAll('.card').forEach(function (element) { 
                 element.classList.add('card-block');
             })
         }
 
         function cardsCheck(timeClick) {
             if (card1.id === card2.id) {
-                card1.item.classList.add('card-checked');
-                card2.item.classList.add('card-checked');
+                card1.item.classList.add('card-checked'); 
+                card2.item.classList.add('card-checked'); 
                 --countLessCard;
                 card1 = {};
                 card2 = {};
@@ -127,7 +126,7 @@
             document.getElementById('cancell__time-move').textContent = timeClick;
         }
 
-        function startTimerClick(timeClick) {
+        function startTimerClick(timeClick) { 
             let i = 1;
             let objectTime = document.getElementById('cancell__time-move');
             clearInterval(timerIdClick);
@@ -170,17 +169,17 @@
             let cucsessObject = document.getElementById('cucsess');
             itemNumber.textContent = id;
             item.classList.add('card', 'flex');
-            item.style.backgroundImage = srcImg;
+            item.style.backgroundImage = srcImg; 
             item.addEventListener('click', () => {
                 startTimerClick(timeClick);
-                createCardsCheck(id, item);
-                cardOpen(item);
+                createCardsCheck(id, item); 
+                cardOpen(item); 
                 cardBlock(item);
                 if ((Object.entries(card1).length > 0) && (Object.entries(card2).length > 0)) {
                     cardsBlock();
-                    let check = cardsCheck(timeClick);
+                    let check = cardsCheck(timeClick); 
                     if (check && countLessCard > 0) {
-                        firework(cucsessObject);
+                        firework(cucsessObject); 
                     }
                 }
             })
@@ -199,7 +198,6 @@
                 element.classList.add('card-block', 'card-open');
             })
 
-            console.log('all', timeAll, 'work', timeWork);
             if (timeAll > timeWork) {
                 document.getElementById('cucsess').style.display = 'block';
                 document.getElementById('finish-cucsess').style.display = 'block';
@@ -226,11 +224,11 @@
             clearInterval(timerIDGame);
             clearTimeout(timerIDGameFinish);
             card1 = {};
-            card2 = {};
-            timerIdClick = null;
-            timerIdClickFinish = null;
-            timerIDGame = null;
-            timerIDGameFinish = null;
+            card2 = {}; 
+            timerIdClick = null; 
+            timerIdClickFinish = null; 
+            timerIDGame = null; 
+            timerIDGameFinish = null; 
             countLessCard = 0;
             document.getElementById('cucsess').style.display = 'none';
             document.getElementById('finish-uncucses').style.display = 'none';
@@ -299,9 +297,9 @@
 
 
             document.getElementById('confirmBtn').addEventListener('click', () => {
-                const timeGame = Number(document.getElementById('input-time-all').value) * 60;
+                const timeGame = Number(document.getElementById('input-time-all').value) * 60; 
                 timeAll = timeGame;
-                const timeClick = Number(document.getElementById('input-time-move').value);
+                const timeClick = Number(document.getElementById('input-time-move').value); 
                 document.getElementById('cancell__time-all').textContent = timeGame;
                 document.getElementById('cancell__time-move').textContent = timeClick;
                 document.getElementById('condition').style.display = 'none';
@@ -314,8 +312,8 @@
                 cards.id = 'cards';
                 container.append(cards);
                 countLessCard = Number(document.getElementById('countCards').value);
-                creatArrayBackGroundCard(arrayImg);
-                shuffle(arrayImg);
+                creatArrayBackGroundCard(arrayImg); 
+                shuffle(arrayImg); 
                 createNumbersArray(Number(document.getElementById('countCards').value), array, arrayImg);
                 shuffle(array);
                 for (let item of array) { createItem(item.number, timeClick, item.img) };
