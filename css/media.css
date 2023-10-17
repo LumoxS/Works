@@ -1,0 +1,22 @@
+@media (max-width: 576px) {
+    .container {
+        margin-top: 0;
+        padding: 20px;
+        padding-top: 30px;
+    }
+    .btn-warning {
+        font-size: 12px;
+        height: 25px;
+    }
+
+    .cancell__time-all,
+    .cancell__time-move {
+        height: 25px;
+        font-size: 16px;
+        letter-spacing: .2rem;
+    }
+
+    .condition label {
+        padding-right: 60px;
+    }
+}

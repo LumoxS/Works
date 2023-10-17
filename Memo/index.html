@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Игра МЕМО</title>
+    <link rel="stylesheet" href="libs/bootstrap-5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/background.css">
+    <link rel="stylesheet" href="css/cucsess.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    <script defer src="libs/bootstrap-5/js/bootstrap.bundle.min.js"></script>
+    <script defer src="js/script.js"></script>
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="container container-fluid relative" id="container">
+        <div id="condition" class="condition">
+            <div class="row">
+                <div class="col">
+                    <h1 class="justify-content-center align-items-center">Найди пару</h1>
+                </div>
+            </div>
+            <div class="row condition__input justify-content-center align-items-center mh-100">
+                <div
+                    class="col-12 col-lg-6 col-md-8 col-sm-12 flex justify-content-between align-items-center relative">
+                    <label for="countCards">&#128101;количество карточек</label>
+                    <input id="countCards" type="number" class="count-cards absolute" value="4" title="число от 2 до 20">
+                </div>
+            </div>
+            <div class="row condition__input justify-content-center align-items-center">
+                <div
+                    class="col-12 col-lg-6 col-md-8 col-sm-12 flex justify-content-between align-items-center relative">
+                    <label for="input-time-all">&#9200;Время на&nbsp;игру&#9913;мин&#9913;</label>
+                    <input id="input-time-all" type="number" class="input-time-all absolute" value="1"
+                        title="Введите время - минумум 1 минута">
+                </div>
+            </div>
+            <div class="row condition__input justify-content-center align-items-center">
+                <div
+                    class="col-12 col-lg-6 col-md-8 col-sm-12 flex justify-content-between align-items-center relative">
+                    <label for="input-time-move">&#9203;Время на&nbsp;ход&#9913;сек&#9913;</label>
+                    <input id="input-time-move" type="number" class="input-time-move absolute" value="1"
+                        title="Введите время - минумум 3 секунды">
+                </div>
+            </div>
+
+            <div class="row condition__btn justify-content-center align-items-center">
+                <div class="col-6 flex justify-content-center align-items-center relative">
+                    <button id="confirmBtn" class="condition__start-btn btn btn-success absolute">Начать игру</button>
+                </div>
+            </div>
+
+            <div class="row justify-content-center align-items-center">
+                <div class="col condition__img">
+                    <img src="img/capture.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div id="cancell" class="cancell">
+            <div class="row">
+                <div class="col-5 col-lg-3">
+                    <button class="btn btn-warning absolute flex">Начать заново</button>
+                </div>
+                <div class="col-2">
+                    <span id="cancell__time-all" class="cancell__time-all absolute flex">600</span>
+                </div>
+                <div class="col-2">
+                    <span id="cancell__time-move" class="cancell__time-move absolute flex">3</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="cucsess" class="cucsess absolute">
+            <div class="pyro">
+                <div class="before"></div>
+                <div class="after"></div>
+            </div>
+        </div>
+        <div id="finish-cucsess" class="finish-cucsess absolute">
+            <span id="finish-cucsess-txt" class="finish-cucsess-txt">Поздравляю! Вы выиграли. Ваше время:</span>
+            <img src="./img/two.png" alt="Победа!">
+        </div>
+        <div id="finish-uncucses" class="finish-uncucses absolute">
+            <span id="finish-uncucses-txt" class="finish-uncucses-txt">Тренируйтесь!</span>
+            <img src="./img/tren.png" alt="Проигрыш!">
+        </div>
+        <div class="back-shapes">
+            <span class="floating circle"
+                style="top:66.59856996935649%;left:13.020833333333334%;animation-delay:-0.9s;"></span>
+            <span class="floating triangle" style="top:31.46067415730337%;left:33.59375%;animation-delay:-4.8s;"></span>
+            <span class="floating cross"
+                style="top:76.50663942798774%;left:38.020833333333336%;animation-delay:-4s;"></span>
+            <span class="floating square" style="top:21.450459652706844%;left:14.0625%;animation-delay:-2.8s;"></span>
+            <span class="floating square"
+                style="top:58.12053115423902%;left:56.770833333333336%;animation-delay:-2.15s;"></span>
+            <span class="floating square"
+                style="top:8.682328907048008%;left:72.70833333333333%;animation-delay:-1.9s;"></span>
+            <span class="floating cross"
+                style="top:31.3585291113381%;left:58.541666666666664%;animation-delay:-0.65s;"></span>
+            <span class="floating cross"
+                style="top:69.96935648621042%;left:81.45833333333333%;animation-delay:-0.4s;"></span>
+            <span class="floating circle" style="top:15.117466802860061%;left:32.34375%;animation-delay:-4.1s;"></span>
+            <span class="floating circle"
+                style="top:13.074565883554648%;left:45.989583333333336%;animation-delay:-3.65s;"></span>
+            <span class="floating cross"
+                style="top:55.87334014300306%;left:27.135416666666668%;animation-delay:-2.25s;"></span>
+            <span class="floating cross" style="top:49.54034729315628%;left:53.75%;animation-delay:-2s;"></span>
+            <span class="floating cross"
+                style="top:34.62717058222676%;left:49.635416666666664%;animation-delay:-1.55s;"></span>
+            <span class="floating cross"
+                style="top:33.19713993871297%;left:86.14583333333333%;animation-delay:-0.95s;"></span>
+            <span class="floating square"
+                style="top:28.19203268641471%;left:25.208333333333332%;animation-delay:-4.45s;"></span>
+            <span class="floating circle"
+                style="top:39.7344228804903%;left:10.833333333333334%;animation-delay:-3.35s;"></span>
+            <span class="floating triangle"
+                style="top:77.83452502553627%;left:24.427083333333332%;animation-delay:-2.3s;"></span>
+            <span class="floating triangle"
+                style="top:2.860061287027579%;left:47.864583333333336%;animation-delay:-1.75s;"></span>
+            <span class="floating triangle"
+                style="top:71.3993871297242%;left:66.45833333333333%;animation-delay:-1.25s;"></span>
+            <span class="floating triangle"
+                style="top:31.256384065372828%;left:76.92708333333333%;animation-delay:-0.65s;"></span>
+            <span class="floating triangle"
+                style="top:46.47599591419816%;left:38.90625%;animation-delay:-0.35s;"></span>
+            <span class="floating cross"
+                style="top:3.4729315628192032%;left:19.635416666666668%;animation-delay:-4.3s;"></span>
+            <span class="floating cross" style="top:3.575076608784474%;left:6.25%;animation-delay:-4.05s;"></span>
+            <span class="floating cross"
+                style="top:77.3237997957099%;left:4.583333333333333%;animation-delay:-3.75s;"></span>
+            <span class="floating cross"
+                style="top:0.9193054136874361%;left:71.14583333333333%;animation-delay:-3.3s;"></span>
+            <span class="floating square" style="top:23.6976506639428%;left:63.28125%;animation-delay:-2.1s;"></span>
+            <span class="floating square" style="top:81.30745658835546%;left:45.15625%;animation-delay:-1.75s;"></span>
+            <span class="floating square"
+                style="top:60.9805924412666%;left:42.239583333333336%;animation-delay:-1.45s;"></span>
+            <span class="floating square" style="top:29.009193054136876%;left:93.90625%;animation-delay:-1.05s;"></span>
+            <span class="floating square" style="top:52.093973442288046%;left:68.90625%;animation-delay:-0.7s;"></span>
+            <span class="floating square" style="top:81.51174668028601%;left:83.59375%;animation-delay:-0.35s;"></span>
+            <span class="floating square"
+                style="top:11.542390194075587%;left:91.51041666666667%;animation-delay:-0.1s;"></span>
+        </div>
+
+    </div>
+</body>
+
+</html>
