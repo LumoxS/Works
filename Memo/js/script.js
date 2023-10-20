@@ -50,9 +50,9 @@
         let card1 = {}; 
         let card2 = {}; 
         let countLessCard = 0;
-        let timerIdClick = null; 
+        let timerIdClick = null;
         let timerIdClickFinish = null; 
-        let timerIDGame = null;
+        let timerIDGame = null; 
         let timerIDGameFinish = null; 
         let timeWork = 0;
         let timeAll = 0;
@@ -72,7 +72,7 @@
         }
 
         function cardsUnBlock() { 
-            document.querySelectorAll('.card').forEach(function (element) {
+            document.querySelectorAll('.card').forEach(function (element) { 
                 element.classList.remove('card-block', 'card-open');
             })
         }
@@ -92,13 +92,13 @@
             }
         }
 
-        function cardsBlock() {  
+        function cardsBlock() { 
             document.querySelectorAll('.card').forEach(function (element) { 
                 element.classList.add('card-block');
             })
         }
 
-        function cardsCheck(timeClick) { 
+        function cardsCheck(timeClick) {
             if (card1.id === card2.id) {
                 card1.item.classList.add('card-checked'); 
                 card2.item.classList.add('card-checked'); 
@@ -121,7 +121,7 @@
             };
         }
 
-        function cardsCheckNoTime() {
+        function cardsCheckNoTime() { 
             if (card1.id === card2.id) {
                 card1.item.classList.add('card-checked'); 
                 card2.item.classList.add('card-checked'); 
@@ -197,9 +197,9 @@
             item.classList.add('card', 'flex');
             item.style.backgroundImage = srcImg; 
             item.addEventListener('click', () => {
-                if (checkTimeClick) {
+                if (checkTimeClick) { 
                     startTimerClick(timeClick); 
-                    createCardsCheck(id, item);
+                    createCardsCheck(id, item); 
                     cardOpen(item); 
                     cardBlock(item);
                     if ((Object.entries(card1).length > 0) && (Object.entries(card2).length > 0)) { 
@@ -223,7 +223,6 @@
                         }
                     }
                     if ((Object.entries(card1).length > 0) && (Object.entries(card2).length > 0) && (card2.item !== item)) {
-                        
                         card1 = {};
                         card2 = {};
                         cardsUnBlock();
@@ -276,7 +275,7 @@
             clearTimeout(timerIDGameFinish);
             card1 = {}; 
             card2 = {}; 
-            timerIdClick = null; 
+            timerIdClick = null;
             timerIdClickFinish = null; 
             timerIDGame = null; 
             timerIDGameFinish = null; 
@@ -350,7 +349,7 @@
         document.getElementById('confirmBtn').addEventListener('click', () => {
             const timeGame = Number(document.getElementById('input-time-all').value) * 60; 
             timeAll = timeGame;
-            const timeClick = Number(document.getElementById('input-time-move').value); 
+            const timeClick = Number(document.getElementById('input-time-move').value);
             document.getElementById('cancell__time-all').textContent = timeGame;
             document.getElementById('cancell__time-move').textContent = timeClick;
             document.getElementById('condition').style.display = 'none';
