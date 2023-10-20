@@ -1,4 +1,14 @@
 (() => {
+
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
     function shuffle(arr) {
         const arrcount = arr.length;
         for (let i = 0; i <= arrcount - 1; ++i) {
@@ -36,12 +46,13 @@
         const array = [];
         const arrayImg = []
         const keySave = 'memo';
+        let checkTimeClick = false;
         let card1 = {}; 
         let card2 = {}; 
         let countLessCard = 0;
         let timerIdClick = null; 
         let timerIdClickFinish = null; 
-        let timerIDGame = null; 
+        let timerIDGame = null;
         let timerIDGameFinish = null; 
         let timeWork = 0;
         let timeAll = 0;
@@ -60,8 +71,8 @@
             item.classList.add('card-block');
         }
 
-        function cardsUnBlock() {
-            document.querySelectorAll('.card').forEach(function (element) { 
+        function cardsUnBlock() { 
+            document.querySelectorAll('.card').forEach(function (element) {
                 element.classList.remove('card-block', 'card-open');
             })
         }
@@ -81,13 +92,13 @@
             }
         }
 
-        function cardsBlock() {
+        function cardsBlock() {  
             document.querySelectorAll('.card').forEach(function (element) { 
                 element.classList.add('card-block');
             })
         }
 
-        function cardsCheck(timeClick) {
+        function cardsCheck(timeClick) { 
             if (card1.id === card2.id) {
                 card1.item.classList.add('card-checked'); 
                 card2.item.classList.add('card-checked'); 
@@ -106,6 +117,21 @@
             else {
                 card1 = {};
                 card2 = {};
+                return false;
+            };
+        }
+
+        function cardsCheckNoTime() {
+            if (card1.id === card2.id) {
+                card1.item.classList.add('card-checked'); 
+                card2.item.classList.add('card-checked'); 
+                --countLessCard;
+                if (countLessCard === 0) {
+                    gameFinish();
+                }
+                return true;
+            }
+            else {
                 return false;
             };
         }
@@ -140,7 +166,7 @@
             timerIdClickFinish = setTimeout(() => {
                 stopTimerClick(timeClick);
                 clearInterval(timerIdClick);
-            }, (timeClick * 1000) +300);
+            }, (timeClick * 1000) + 300);
         }
 
         function timeGameTimer(timeGame) {
@@ -171,15 +197,39 @@
             item.classList.add('card', 'flex');
             item.style.backgroundImage = srcImg; 
             item.addEventListener('click', () => {
-                startTimerClick(timeClick);
-                createCardsCheck(id, item); 
-                cardOpen(item); 
-                cardBlock(item);
-                if ((Object.entries(card1).length > 0) && (Object.entries(card2).length > 0)) {
-                    cardsBlock();
-                    let check = cardsCheck(timeClick); 
-                    if (check && countLessCard > 0) {
-                        firework(cucsessObject); 
+                if (checkTimeClick) {
+                    startTimerClick(timeClick); 
+                    createCardsCheck(id, item);
+                    cardOpen(item); 
+                    cardBlock(item);
+                    if ((Object.entries(card1).length > 0) && (Object.entries(card2).length > 0)) { 
+                        cardsBlock();
+                        let check = cardsCheck(timeClick); 
+                        if (check && countLessCard > 0) { 
+                            firework(cucsessObject); 
+                        }
+                    }
+                }
+                else { 
+                    createCardsCheck(id, item); 
+                    if ((Object.entries(card2).length === 0) || (card2.item === item)) {
+                        cardOpen(item); 
+                    }
+                    cardBlock(item);
+                    if ((Object.entries(card1).length > 0) && (Object.entries(card2).length > 0) && (card2.item === item)) { 
+                        let check = cardsCheckNoTime(); 
+                        if (check && countLessCard > 0) { 
+                            firework(cucsessObject); 
+                        }
+                    }
+                    if ((Object.entries(card1).length > 0) && (Object.entries(card2).length > 0) && (card2.item !== item)) {
+                        
+                        card1 = {};
+                        card2 = {};
+                        cardsUnBlock();
+                        createCardsCheck(id, item); 
+                        cardOpen(item); 
+                        cardBlock(item);
                     }
                 }
             })
@@ -198,6 +248,7 @@
                 element.classList.add('card-block', 'card-open');
             })
 
+            console.log('all', timeAll, 'work', timeWork);
             if (timeAll > timeWork) {
                 document.getElementById('cucsess').style.display = 'block';
                 document.getElementById('finish-cucsess').style.display = 'block';
@@ -223,7 +274,7 @@
             clearTimeout(timerIdClickFinish);
             clearInterval(timerIDGame);
             clearTimeout(timerIDGameFinish);
-            card1 = {};
+            card1 = {}; 
             card2 = {}; 
             timerIdClick = null; 
             timerIdClickFinish = null; 
@@ -260,70 +311,79 @@
                     document.getElementById('input-time-all').value = dataRestore[1];
                     document.getElementById('input-time-move').value = dataRestore[2];
                 }
-            }catch{}
-            }
+            } catch { }
+        }
 
         function controllInputCallCard() {
-                if (Number(document.getElementById('countCards').value) > 20) {
-                    document.getElementById('countCards').value = 20;
-                }
-                else if (Number(document.getElementById('countCards').value < 2)) {
-                    document.getElementById('countCards').value = 2;
-                }
+            if (Number(document.getElementById('countCards').value) > 20) {
+                document.getElementById('countCards').value = 20;
             }
-
-            function controllInputTimeAll() {
-                if (Number(document.getElementById('input-time-all').value) > 20) {
-                    document.getElementById('input-time-all').value = 20;
-                }
-                else if (Number(document.getElementById('input-time-all').value) === 0) {
-                    document.getElementById('input-time-all').value = 0.5;
-                }
+            else if (Number(document.getElementById('countCards').value < 2)) {
+                document.getElementById('countCards').value = 2;
             }
+        }
 
-            function controllInputTimeClick() {
-                if (Number(document.getElementById('input-time-move').value) > 60) {
-                    document.getElementById('input-time-move').value = 60;
-                }
-                else if (Number(document.getElementById('input-time-move').value) < 1) {
-                    document.getElementById('input-time-move').value = 1;
-                }
+        function controllInputTimeAll() {
+            if (Number(document.getElementById('input-time-all').value) > 20) {
+                document.getElementById('input-time-all').value = 20;
             }
+            else if (Number(document.getElementById('input-time-all').value) === 0) {
+                document.getElementById('input-time-all').value = 0.5;
+            }
+        }
 
-            document.getElementById('countCards').addEventListener('change', controllInputCallCard);
-            document.getElementById('input-time-all').addEventListener('change', controllInputTimeAll);
-            document.getElementById('input-time-move').addEventListener('change', controllInputTimeClick);
+        function controllInputTimeClick() {
+            if (Number(document.getElementById('input-time-move').value) > 60) {
+                document.getElementById('input-time-move').value = 60;
+            }
+            else if (Number(document.getElementById('input-time-move').value) < 1) {
+                document.getElementById('input-time-move').value = 1;
+            }
+        }
+
+        document.getElementById('countCards').addEventListener('change', controllInputCallCard);
+        document.getElementById('input-time-all').addEventListener('change', controllInputTimeAll);
+        document.getElementById('input-time-move').addEventListener('change', controllInputTimeClick);
 
 
 
-            document.getElementById('confirmBtn').addEventListener('click', () => {
-                const timeGame = Number(document.getElementById('input-time-all').value) * 60; 
-                timeAll = timeGame;
-                const timeClick = Number(document.getElementById('input-time-move').value); 
-                document.getElementById('cancell__time-all').textContent = timeGame;
-                document.getElementById('cancell__time-move').textContent = timeClick;
-                document.getElementById('condition').style.display = 'none';
-                document.getElementById('cancell').style.display = 'block';
-                document.getElementById('finish-cucsess').style.display = 'none';
-                document.getElementById('finish-uncucses').style.display = 'none';
-                const container = document.getElementById('container');
-                const cards = document.createElement('div');
-                cards.classList.add('cards', 'flex');
-                cards.id = 'cards';
-                container.append(cards);
-                countLessCard = Number(document.getElementById('countCards').value);
-                creatArrayBackGroundCard(arrayImg); 
-                shuffle(arrayImg); 
-                createNumbersArray(Number(document.getElementById('countCards').value), array, arrayImg);
-                shuffle(array);
-                for (let item of array) { createItem(item.number, timeClick, item.img) };
-                timeGameTimer(timeGame);
-                saveGame(document.getElementById('countCards').value, document.getElementById('input-time-all').value, document.getElementById('input-time-move').value);
-            });
+        document.getElementById('confirmBtn').addEventListener('click', () => {
+            const timeGame = Number(document.getElementById('input-time-all').value) * 60; 
+            timeAll = timeGame;
+            const timeClick = Number(document.getElementById('input-time-move').value); 
+            document.getElementById('cancell__time-all').textContent = timeGame;
+            document.getElementById('cancell__time-move').textContent = timeClick;
+            document.getElementById('condition').style.display = 'none';
+            document.getElementById('cancell').style.display = 'block';
+            document.getElementById('finish-cucsess').style.display = 'none';
+            document.getElementById('finish-uncucses').style.display = 'none';
+            const container = document.getElementById('container');
+            const cards = document.createElement('div');
+            cards.classList.add('cards', 'flex');
+            cards.id = 'cards';
+            container.append(cards);
+            countLessCard = Number(document.getElementById('countCards').value);
+            creatArrayBackGroundCard(arrayImg); 
+            shuffle(arrayImg); 
+            createNumbersArray(Number(document.getElementById('countCards').value), array, arrayImg);
+            shuffle(array);
+            for (let item of array) { createItem(item.number, timeClick, item.img) };
+            timeGameTimer(timeGame);
+            saveGame(document.getElementById('countCards').value, document.getElementById('input-time-all').value, document.getElementById('input-time-move').value);
+        });
 
-            document.getElementById('cancell').addEventListener('click', () => {
-                gameClose();
-            });
+        document.getElementById('cancell').addEventListener('click', () => {
+            gameClose();
+        });
 
-        })
+        document.getElementById('checkbox').addEventListener('change', function () {
+            if (this.checked) {
+                checkTimeClick = true;
+                document.getElementById('cancell__time-move').style.display = 'flex';
+            } else {
+                document.getElementById('cancell__time-move').style.display = 'none';
+                checkTimeClick = false;
+            }
+        });
+    })
 })();
